@@ -1,0 +1,17 @@
+html
+  head
+    title FoodCourtSystem
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/component.css')
+  body
+    .nav-bar
+      .logo
+        img(src="/images/chef-logo.jpg")
+        span Master Chef
+      .menu
+        a(href='/cook/orderlist') Order List
+        a(href='/cook/foodList') Food List
+        a(href='/cook/createNotice') Create Notification
+      p.logout
+        a(href='/auth/logout') Logout
+    block content

@@ -1,0 +1,75 @@
+h1 {
+	text-align: center;
+	padding: 60px 0px 40px 0px;
+}
+
+.header {
+	padding: 20px 0 30px 0;
+	background-color: pink;
+}
+
+.header h2 {
+	text-align: center;
+}
+
+.header .top {
+	text-align: right;
+	padding-right: 100px;
+}
+
+.header .top a {
+	padding: 10px;
+}
+
+.btn {
+	display: block;
+	padding: 20px 0px;
+	margin: auto;
+	background-color: green;
+	color: white;
+	font-weight: bold;
+}
+
+/*COOK*/
+
+.nav-bar {
+	background-color: #8300ff;
+	padding: 20px;
+	display: flex;
+}
+
+.nav-bar .logo img {
+	width: 100px;
+}
+
+.nav-bar .logo span {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.nav-bar .menu {
+	margin-left: auto;
+	display: flex;
+}
+
+.nav-bar .menu a {
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.nav-bar .menu a:hover {
+	color: red;
+}
+
+.nav-bar .logout a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px 10px 100px;
+	color: white;
+	font-weight: bold;
+}
+
+.nav-bar .logout a:hover {
+	color: red;
+}

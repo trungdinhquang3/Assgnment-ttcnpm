@@ -1,0 +1,21 @@
+extends ../layouts/header.pug
+
+block content
+  .container
+    h1 Orderlist
+    table.table.table-bordered
+      tr
+        th OrderID
+        th UserID
+        th UserName
+        th Detail
+        th State
+      each order in orderList
+        tr
+          td= order.orderId
+          td= order.userId
+          td= order.userName
+          td
+            a(href='/cook/detail/' + order.orderId) Detail
+          td
+            a(href="/cook/orderList/state/" + order.orderId)= order.state == true ? "Hoàn thành" : "Chưa hoàn thành"

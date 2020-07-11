@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+    <!-- style css -->
+  
+    <link rel="stylesheet" href="/ejs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ejs/css/jquery-ui-1.10.1.min.css" />
+    <link rel="stylesheet" href="/ejs/css/customize.css" />
+    <link rel="stylesheet" href="/ejs/css/font-awesome.css" />
+    <link rel="stylesheet" href="/ejs/css/style.css" />
+    <link rel="stylesheet" href="/ejs/css/flexslider.css" />
+    <link rel="stylesheet" href="/ejs/js/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/ejs/css/blue.css" />
+    <link rel="stylesheet" href="/ejs/css/loading.css" />
+    <!-- modernizr js -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  
+   <!--JS-->
+    <script src="/ejs/js/jquery.min.js"></script>
+    <script src="/ejs/js/jquery-ui.min.js"></script>
+    <script src="/ejs/js/jquery.cookie.js"></script>
+    <script src="/ejs/js/bootstrap.min.js"></script>
+    <script src="/ejs/js/jquery.flexslider-min.js"></script>
+    <script src="/ejs/js/jquery.cycle2.min.js"></script>
+    <script src="/ejs/js/jquery.cycle2.carousel.min.js"></script>
+    <script src="/ejs/js/jquery.tweet.js"></script>
+    <script src="/ejs/js/fancybox/jquery.fancybox.js"></script>
+    <script src="/ejs/js/custom.js"></script>
+    <script src="/ejs/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+    <% 
+    var qual = 0;
+    var sum = 0;
+    cart.forEach(function(order) { 
+        sum += (order.food.price * order.amount);
+        qual += order.amount;
+    });
+    %>
+
+     <div id="ctl15" style="display:none;">
+  
+                <div class="loading"></div>
+            
+</div>
+
+        <div id="mainContainer" class="clearfix">
+            <header>
+                
+                
+
+<div class="upperHeader">
+    <div class="container">
+        <p class="pull-left">
+            Chào mừng
+            <b id="ucUpperHeader_b_FullName"></b>
+            đến với Shop Online,
+            <span id="ucUpperHeader_span_Account">
+                <a href="/auth/login">Đăng nhập</a>
+                hoặc
+                <a href="#">Đăng ký</a>
+            </span>
+            
+        </p>
+
+        <ul class="pull-right inline">
+            <li>
+                <a href="#" class="invarseColor">Tài Khoản</a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                <a href="/products/cart" class="invarseColor">Giỏ Hàng</a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                <a href="#" class="invarseColor">Thanh Toán</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+                <div class="middleHeader">
+                    <div class="container">
+                        <div class="middleContainer clearfix">
+                            <div class="siteLogo pull-left">
+                                <h1>
+                                    <a href="Default.html">ShopFine</a>
+                                </h1>
+                            </div>
+
+                            
+                            
+
+<div class="pull-right">
+    <div id="ucMiniShoppingCart_ctl00">
+  
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-shopping-cart"></i>
+                    &nbsp;Bạn đã chọn
+                    <b><%= qual %></b>
+                    sản phẩm&nbsp;
+            <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu cart-content pull-right">
+                    <table class="table-cart">
+                        <tfoot>
+                            <tr>
+                                <td class="cart-product-info">
+                                    <a href="/products/cart" class="btn btn-small">Xem giỏ hàng</a>
+                                    <a href="#" class="btn btn-small btn-primary">Thanh toán</a>
+                                </td>
+                                <td align="center">
+                                    <h3>
+                                        Tổng Cộng
+                                <br />
+                                        <span id="ucMiniShoppingCart_span_Amount"><%= sum %> đ</span>
+                                    </h3>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        
+</div>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+
+<script>
+    function activeProductMainMenu(mid) {
+        $("li[data-mid=" + mid + "]").attr("class", "active");
+    }
+</script>
+
+<div class="mainNav">
+    <div class="container">
+        <div class="navbar">
+            <ul class="nav">
+                <li class='active'>
+                    <a href="/"><i class="icon-home"></i></a>
+                </li>
+                <li>
+                    <a href="/">Trang chủ</a>
+                </li>
+                
+                <li data-mid='1'>
+                    <a href="#">
+                        Danh sách món ăn
+                    </a>
+                    
+                </li>
+                    
+                <li data-mid='2'>
+                    <a href="#">
+                        Món mới
+                    </a>
+                </li>
+                    
+                <li data-mid='3'>
+                    <a href="#">
+                        Gian hàng
+                    </a>
+                </li>
+                    
+                <li class=''>
+                    <a href="#">Liên Hệ</a>
+                </li>
+                <li class=''>
+                    <a href="#"><span></span>Tài Khoản</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+            </header>
+
+            
+    <div class="container">
+        <div class="titleHeader clearfix">
+            <h3>Giỏ Hàng Của Tôi</h3>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <div id="content_ucShoppingCart_UpdatePanel_Main">
+  
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th class="desc">Tên sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% cart.forEach(function(order) { %>
+                    <tr>
+                    <td>
+                        <a href="#" class="fancybox">
+                            <img src="<%= order.food.image %>" class="thumb-cart" />
+                        </a>
+                    </td>
+                    <td class="desc">
+                        <h4>
+                            <a href="#" class="invarseColor">
+                                <%= order.food.name %>
+                            </a>
+                        </h4>
+                    </td>
+                    <td class="total-price">
+                        <h2><%= order.food.price %> đ</h2>
+                    </td>
+                    <td class="quantity">
+
+                        <h2><%= order.amount %></h2>
+                    </td>
+                    <td>
+                        <a  href="<%= '/products/cart/delete/' + order.food.id %>" id="ctl00_content_ucShoppingCart_Repeater_Cart_ctl00_LinkButton_Remove" class="btn btn-small btn-danger" data-title="Loại khỏi giỏ hàng" data-placement="top" data-toggle="tooltip">
+                                    <i class="icon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            <% }); %>
+                
+                       
+                    
+            </tbody>
+        </table>
+        <div class="span5 fr">
+            <div class="cart-receipt">
+                <table class="table table-receipt no-border">
+                    <tr>
+                        <td class="alignRight">Tổng cộng</td>
+                        <td id="content_ucShoppingCart_td_Total" class="alignLeft"><%= sum %> đ</td>
+  
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <h2>Cần thanh toán</h2>
+                        </td>
+                        <td class="alignLeft">
+                            <h2 id="content_ucShoppingCart_h2_Amount"><%= sum %> đ</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <a class="btn" href="/">Chọn thêm sản phẩm</a>
+                        </td>
+                        <td class="alignLeft">
+                            <a onclick="return checkoutButtonClick();" id="content_ucShoppingCart_LinkButton_CheckOut" class="btn btn-primary" href="javascript:__doPostBack(&#39;ctl00$content$ucShoppingCart$LinkButton_CheckOut&#39;,&#39;&#39;)">Đến trang thanh toán</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+            <footer>
+                <div class="footerOuter">
+                    <div class="container">
+                        <div class="row-fluid">
+                            
+                            <div class="span3" style="margin-left: 365px;">
+                                <div class="titleHeader clearfix">
+                                    <h3>Thông Tin Liên Hệ</h3>
+                                </div>
+                                <div class="contactInfo">
+                                    <ul class="unstyled">
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-volume-up"></i></button>
+                                            <a class="invarseColor" href="#">0932074901</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-envelope-alt"></i></button>
+                                            <a class="invarseColor" href="#">trungdinhquang3@gmail.com</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-map-marker"></i></button>
+                                            ĐHBK HCM, Dĩ An, BD
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="payments inline pull-right">
+                                <li class="visia"></li>
+                                <li class="paypal"></li>
+                                <li class="electron"></li>
+                                <li class="discover"></li>
+                            </ul>
+                            <p>© Copyrights 2020 google.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+</body>
+</html>

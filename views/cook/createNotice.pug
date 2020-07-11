@@ -1,0 +1,15 @@
+extends ../layouts/header.pug
+
+block content
+  .container
+    h1 Create Notification
+
+    form.form-group.row(action='/cook/createNotice', method="POST")
+      label.col-sm-2.col-form-label(for='name') Food ID 
+      input#name.form-control.col-sm-10.mb-3(type='text', name='orderId')
+
+      label.col-sm-2.col-form-label(for='price') Content
+      textarea#price.form-control.col-sm-10.mb-3(type='text', name="content", rows="4", cols=50)
+
+      button.btn.btn-primary.m-auto Create Notice
+    

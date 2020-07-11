@@ -1,0 +1,25 @@
+extends ../layouts/header.pug
+
+block content
+
+  .container
+    h1 OrderDetail
+    div
+      span(style="font-weight: bold") OrderID: 
+      span= order.orderId
+    div
+      span(style="font-weight: bold") UserID: 
+      span= order.userId
+    div
+      span(style="font-weight: bold") UserName: 
+      span= order.userName
+    div
+      span(style="font-weight: bold") Food List: 
+      ul
+        each food in order.foodList
+          li
+            span Name: 
+            span= food.name
+            span &nbsp &nbsp &nbsp
+            span Số lượng: 
+            span= food.amount

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+    <!-- style css -->
+  
+    <link rel="stylesheet" href="/ejs/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ejs/css/jquery-ui-1.10.1.min.css" />
+    <link rel="stylesheet" href="/ejs/css/customize.css" />
+    <link rel="stylesheet" href="/ejs/css/font-awesome.css" />
+    <link rel="stylesheet" href="/ejs/css/style.css" />
+    <link rel="stylesheet" href="/ejs/css/flexslider.css" />
+    <link rel="stylesheet" href="/ejs/js/fancybox/jquery.fancybox.css" />
+    <link rel="stylesheet" href="/ejs/css/blue.css" />
+    <link rel="stylesheet" href="/ejs/css/loading.css" />
+    <!-- modernizr js -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  
+   <!--JS-->
+    <script src="/ejs/js/jquery.min.js"></script>
+    <script src="/ejs/js/jquery-ui.min.js"></script>
+    <script src="/ejs/js/jquery.cookie.js"></script>
+    <script src="/ejs/js/bootstrap.min.js"></script>
+    <script src="/ejs/js/jquery.flexslider-min.js"></script>
+    <script src="/ejs/js/jquery.cycle2.min.js"></script>
+    <script src="/ejs/js/jquery.cycle2.carousel.min.js"></script>
+    <script src="/ejs/js/jquery.tweet.js"></script>
+    <script src="/ejs/js/fancybox/jquery.fancybox.js"></script>
+    <script src="/ejs/js/custom.js"></script>
+</head>
+<body>
+
+    
+    <%
+    var qual = 0;
+    var sum = 0;
+    if (cart) {
+      cart.forEach(function(order) { 
+          sum += (order.food.price * order.amount);
+          qual += order.amount;
+      });
+    }
+    %>
+
+        <div id="ctl15" style="display:none;">
+  
+                <div class="loading"></div>
+            
+</div>
+
+        <div id="mainContainer" class="clearfix">
+            <header>
+                
+                
+
+<div class="upperHeader">
+    <div class="container">
+        <p class="pull-left">
+            Chào mừng
+            <b id="ucUpperHeader_b_FullName"></b>
+            đến với Shop Online,
+            <span id="ucUpperHeader_span_Account">
+                <a href="/auth/login">Đăng nhập</a>
+                hoặc
+                <a href="#">Đăng ký</a>
+            </span>
+            
+        </p>
+
+        <ul class="pull-right inline">
+            <li>
+                <a href="#" class="invarseColor">Tài Khoản</a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                <a href="/products/cart" class="invarseColor">Giỏ Hàng</a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                <a href="#" class="invarseColor">Thanh Toán</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+                <div class="middleHeader">
+                    <div class="container">
+                        <div class="middleContainer clearfix">
+                            <div class="siteLogo pull-left">
+                                <h1>
+                                    <a href="/">ShopFine</a>
+                                </h1>
+                            </div>
+
+                            
+                            
+
+<div class="pull-right">
+    <div id="ucMiniShoppingCart_ctl00">
+  
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-shopping-cart"></i>
+                    &nbsp;Bạn đã chọn
+                    <b><%= qual %></b>
+                    sản phẩm&nbsp;
+            <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu cart-content pull-right">
+                    <table class="table-cart">
+                        <tfoot>
+                            <tr>
+                                <td class="cart-product-info">
+                                    <a href="/products/cart" class="btn btn-small">Xem giỏ hàng</a>
+                                    <a href="#" class="btn btn-small btn-primary">Thanh toán</a>
+                                </td>
+                                <td align="center">
+                                    <h3>
+                                        Tổng Cộng
+                                <br />
+                                        <span id="ucMiniShoppingCart_span_Amount"><%= sum %> đ</span>
+                                    </h3>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        
+</div>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+
+<script>
+    function activeProductMainMenu(mid) {
+        $("li[data-mid=" + mid + "]").attr("class", "active");
+    }
+</script>
+
+<div class="mainNav">
+    <div class="container">
+        <div class="navbar">
+            <ul class="nav">
+                <li class='active'>
+                    <a href="/"><i class="icon-home"></i></a>
+                </li>
+                <li>
+                    <a href="/">Trang chủ</a>
+                </li>
+                
+                <li data-mid='1'>
+                    <a href="#mon-an">
+                        Danh sách món ăn
+                    </a>
+                    
+                </li>
+                    
+                <li data-mid='2'>
+                    <a href="#mon-moi">
+                        Món mới
+                    </a>
+                </li>
+                    
+                <li data-mid='3'>
+                    <a href="#gian-hang">
+                        Gian hàng
+                    </a>
+                </li>
+                   
+                <li class=''>
+                    <a href="#lien-he">Liên Hệ</a>
+                </li>
+                <li class=''>
+                    <a href="#"><span></span>Tài Khoản</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+            </header>
+
+            
+    <!--Trang riêng-->
+    <div class="container">
+        
+        
+
+<div class="row margin-top10px">
+    <div class="span8">
+        <div class="flexslider">
+            <ul class="slides">
+                
+                        <li class="flex-active-slide">
+                            <a href="ProductDetail.aspx?id=220">
+                                <img src="/images/1.jpg" />
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="ProductDetail.aspx?id=219">
+                                <img src="/images/2.jpg" />
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="ProductDetail.aspx?id=1">
+                               <img src="/images/10.jpg" />
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="ProductDetail.aspx?id=2">
+                                <img src="/images/12.jpg" />
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="ProductDetail.aspx?id=3">
+                                <img src="/images/13.jpg" />
+                            </a>
+                        </li>
+                    
+            </ul>
+        </div>
+    </div>
+    <div class="span4">
+        <div id="homeSpecial">
+            <div class="titleHeader clearfix">
+                <h3 class="no-margin">Bán chạy</h3>
+            </div>
+            <ul class="vProductItems cycle-slidesh  ow vertical clearfix" data-cycle-fx="carousel" data-cycle-timeout="0" data-cycle-slides=">li" data-cycle-next=".vPrev" data-cycle-prev=".vNext" data-cycle-carousel-visible="2" data-cycle-carousel-vertical="true">
+                
+                        <li class="span4 clearfix">
+                            <div class="thumbImage">
+                                <a href="#">
+                                    <img src="/images/10.jpg" width="92" />
+                                </a>
+                            </div>
+                            <div class="thumbSetting">
+                                <div class="thumbTitle">
+                                    <a href="#" class="invarseColor">
+                                        Chả lụi Phan Thiết
+                                    </a>
+                                </div>
+                                <div class="thumbPrice">
+                                    <span>
+                                         22,000 đ
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    
+                        <li class="span4 clearfix">
+                            <div class="thumbImage">
+                                <a href="#">
+                                    <img src="/images/1.jpg" width="92" />
+                                </a>
+                            </div>
+                            <div class="thumbSetting">
+                                <div class="thumbTitle">
+                                    <a href="#" class="invarseColor">
+                                        Bún đậu mắm tôm
+                                    </a>
+                                </div>
+                                <div class="thumbPrice">
+                                    <span>
+                                         40,000 đ
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="span4 clearfix">
+                            <div class="thumbImage">
+                                <a href="#">
+                                    <img src="/images/12.jpg" width="92" />
+                                </a>
+                            </div>
+                            <div class="thumbSetting">
+                                <div class="thumbTitle">
+                                    <a href="#" class="invarseColor">
+                                        Cơm chiên dương châu
+                                    </a>
+                                </div>
+                                <div class="thumbPrice">
+                                    <span>
+                                         24,000 đ
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    
+                    
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+        
+                <div class="row" id="mon-an">
+                    <div class="span12">
+                        <div id="featuredItems">
+                            <div class="titleHeader clearfix">
+                                <h3 class="no-margin">
+                                    <a href="#">Danh sách món ăn</a>
+                                </h3>
+                            </div>
+                            <div class="row">
+                                <ul class="hProductItems clearfix">
+                                    <% for (var i = 0; i < foodList.length - 4; i++) { %>
+                                      <li class="span3 clearfix">
+                                                <div class="thumbnail">
+                                                    <a href="#">
+                                                        <img src="<%= foodList[i].image %>" />
+                                                    </a>
+                                                </div>
+                                                <div id="content_Repeater_Main_Repeater_Product_0_ctl01_0">
+  
+                                                        <div class="thumbSetting">
+                                                            <div class="thumbTitle">
+                                                                <a href="#" class="invarseColor">
+                                                                  <%= foodList[i].name %>
+                                                                </a>
+                                                            </div>
+                                                            <div class="thumbPrice">
+                                                                <span>
+                                                                  <%= foodList[i].price %> đ
+                                                                </span>
+                                                            </div>
+                                                            <div class="thumbButtons">
+                                                                <a id="ctl00_content_Repeater_Main_ctl00_Repeater_Product_ctl00_LinkButton_AddToCart" class="btn btn-primary btn-small" href="<%= '/products/add-to-cart/' + foodList[i].id %>">
+                                                                    <i class="icon-shopping-cart"></i>
+                                                                    &nbsp; Thêm vào giỏ
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                          </div>
+                                            </li>
+                                    <% }; %>
+
+                                        
+                                            
+                                        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row" id="mon-moi">
+                    <div class="span12">
+                        <div id="featuredItems">
+                            <div class="titleHeader clearfix">
+                                <h3 class="no-margin">
+                                    <a href="#">Món mới</a>
+                                </h3>
+                            </div>
+                            <div class="row">
+                                <ul class="hProductItems clearfix">
+                                    <% for (var i = foodList.length - 1; i >= foodList.length - 4; i--) { %>
+                                        <li class="span3 clearfix">
+                                                  <div class="thumbnail">
+                                                      <a href="#">
+                                                          <img src="<%= foodList[i].image %>" />
+                                                      </a>
+                                                  </div>
+                                                  <div id="content_Repeater_Main_Repeater_Product_0_ctl01_0">
+    
+                                                          <div class="thumbSetting">
+                                                              <div class="thumbTitle">
+                                                                  <a href="#" class="invarseColor">
+                                                                    <%= foodList[i].name %>
+                                                                  </a>
+                                                              </div>
+                                                              <div class="thumbPrice">
+                                                                  <span>
+                                                                    <%= foodList[i].price %> đ
+                                                                  </span>
+                                                              </div>
+                                                              <div class="thumbButtons">
+                                                                  <a id="ctl00_content_Repeater_Main_ctl00_Repeater_Product_ctl00_LinkButton_AddToCart" class="btn btn-primary btn-small" href="<%= '/products/add-to-cart/' + foodList[i].id %>">
+                                                                      <i class="icon-shopping-cart"></i>
+                                                                      &nbsp; Thêm vào giỏ
+                                                                  </a>
+                                                              </div>
+                                                          </div>
+                                                      
+                                                            </div>
+                                              </li>
+                                      <% }; %>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+
+        
+        
+
+<div class="row" id="gian-hang">
+    <div class="span12">
+        <div id="brands">
+            <div class="titleHeader clearfix">
+                <h3 class="no-margin"><a href="#">Gian hàng</a></h3>
+            </div>
+            <ul class="brandList clearfix">
+                <li>
+                    <a href="#">
+                        <img src="/images/gh1.png" style="height: 89px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/gh2.jpg" style="height: 89px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/gh3.jpg" style="height: 89px;" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/gh4.png" style="height: 89px;" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+            <footer id="lien-he">
+                <div class="footerOuter">
+                    <div class="container">
+                        <div class="row-fluid">
+                            
+                            <div class="span3" style="margin-left: 365px;">
+                                <div class="titleHeader clearfix">
+                                    <h3>Thông Tin Liên Hệ</h3>
+                                </div>
+                                <div class="contactInfo">
+                                    <ul class="unstyled">
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-volume-up"></i></button>
+                                            <a class="invarseColor" href="#">0932074901</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-envelope-alt"></i></button>
+                                            <a class="invarseColor" href="#">trungdinhquang3@gmail.com</a>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-small"><i class="icon-map-marker"></i></button>
+                                            ĐHBK HCM, Dĩ An, BD
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <ul class="payments inline pull-right">
+                                <li class="visia"></li>
+                                <li class="paypal"></li>
+                                <li class="electron"></li>
+                                <li class="discover"></li>
+                            </ul>
+                            <p>© Copyrights 2020 google.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+</body>
+</html>

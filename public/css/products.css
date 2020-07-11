@@ -1,0 +1,120 @@
+.container{
+    width:100%;
+    height:auto;
+}
+.menu{
+    width: 80%;
+    height:120px;
+    background-color: lavenderblush;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.up ul li img{
+    width: 200px;
+}
+.up ul{
+    list-style: none;
+}.up ul li{
+    display: inline-block;
+    padding: 10px;
+}
+.up ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.up ul li a img{
+    vertical-align: middle;
+}
+.login{
+    float: right;
+    margin: auto;
+    padding-right: 20px;
+}
+
+
+.left {
+    width: 1200px;
+    float: left;
+    min-height: 400px;
+    list-style: none;
+}
+.left ul{
+    list-style: none;
+}
+.right ul{
+    list-style: none;
+}
+.right{
+    width: 500px;
+    float: RIGHT;
+    min-height: 400px;
+    margin: 0;
+}
+.left ul li img{
+width: 200px;
+}
+.right ul li img{
+    width: 200px;
+}
+.main{
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.main {
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.left {
+    display: inline-block;
+    width: 400px;
+}
+
+.left img {
+    width: 350px;
+    height: 250px;
+}
+
+.left a {
+    background-color: yellow;
+    color: red;
+    border-radius: 10px;
+}
+
+.cart table tr td{
+    border: 1px solid black;
+}
+.cart table{
+    border-collapse:collapse;
+}
+.cart table tr td img{
+    width: 200px;
+}
+.cart table tr td h2 {
+    color: blue;
+}
+.cart h1{
+    font-size: 20px;
+   text-align: center;
+}
+.cart h3{
+    padding-top:20px;
+    padding-left: 190px;
+    float: left;
+}
+.cart .payment{
+    padding-top:20px;
+    float: right;
+    margin: auto;
+    padding-right: 200px;
+    
+}

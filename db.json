@@ -1,0 +1,180 @@
+{
+  "users": [
+    {
+      "id": "sfasf",
+      "name": "toan",
+      "password": "1234",
+      "cart": [
+        {
+          "foodId": "asf",
+          "amount": 3
+        },
+        {
+          "foodId": "c728cc",
+          "amount": 3
+        },
+        {
+          "foodId": "asfvf",
+          "amount": 2
+        },
+        {
+          "foodId": "dfsg",
+          "amount": 1
+        }
+      ]
+    }
+  ],
+  "orderList": [
+    {
+      "orderId": "gfsdg",
+      "userId": "asdf",
+      "userName": "Trung",
+      "state": true,
+      "foodList": [
+        {
+          "name": "Bún bò",
+          "amount": 2
+        },
+        {
+          "name": "Nước cam",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "orderId": "ertew",
+      "userId": "gs",
+      "userName": "Toàn",
+      "state": true,
+      "foodList": [
+        {
+          "name": "Chả lụi",
+          "amount": 2
+        },
+        {
+          "name": "Chè thái",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "orderId": "gsfg",
+      "userId": "tewr",
+      "userName": "Toàn",
+      "state": false,
+      "foodList": [
+        {
+          "name": "Gà ta Sơn ca",
+          "amount": 4
+        },
+        {
+          "name": "Chè Hoa",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "orderId": "dg",
+      "userId": "dgfdsfg",
+      "userName": "Toàn",
+      "state": false,
+      "foodList": [
+        {
+          "name": "Bánh đúc có xương",
+          "amount": 4
+        },
+        {
+          "name": "Sâm bổ lượng",
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "foodList": [
+    {
+      "id": "asf",
+      "name": "Bún bò Huế",
+      "price": 20000,
+      "state": false,
+      "image": "/images/10.jpg"
+    },
+    {
+      "id": "dfsg",
+      "name": "Bún chả Hà Nội",
+      "price": 25000,
+      "state": false,
+      "image": "/images/1.jpg"
+    },
+    {
+      "id": "asfvf",
+      "name": "Chả lụi Phan Thiết",
+      "price": 22000,
+      "state": false,
+      "image": "/images/2.jpg"
+    },
+    {
+      "name": "Bún thịt nướng",
+      "price": "15000",
+      "id": "c728cc",
+      "state": false,
+      "image": "/images/12.jpg"
+    },
+    {
+      "name": "Chè hạt sen củ năng",
+      "price": "12000",
+      "id": "b3b7fasd05",
+      "state": false,
+      "image": "/images/2.jpg"
+    },
+    {
+      "name": "Sườn trứng",
+      "price": "20000",
+      "id": "b3b705",
+      "state": false,
+      "image": "/images/12.jpg"
+    },
+    {
+      "name": "Bún chả",
+      "price": "12000",
+      "id": "588324",
+      "state": true,
+      "image": "/images/1.jpg"
+    },
+    {
+      "name": "com",
+      "price": "10000",
+      "id": "bf9e15",
+      "state": true,
+      "image": "/images/1.jpg"
+    },
+    {
+      "name": "Cơm chiên dương châu",
+      "price": "24000",
+      "id": "306cc6",
+      "state": true,
+      "image": "/images/1.jpg"
+    },
+    {
+      "name": "Bún đậu mắm tôm",
+      "price": "40000",
+      "id": "11b0ca",
+      "state": true,
+      "image": "/images/1.jpg"
+    }
+  ],
+  "notification": [
+    {
+      "id": "saf",
+      "orderId": "asfasdf",
+      "content": "Your food is ready"
+    },
+    {
+      "orderId": "dg",
+      "content": "dasdf",
+      "id": "86e69a"
+    }
+  ],
+  "posts": [],
+  "user": {},
+  "count": 0
+}
