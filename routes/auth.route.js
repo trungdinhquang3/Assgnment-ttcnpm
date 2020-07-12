@@ -18,7 +18,7 @@ route.post('/login', (req, res) => {
 		return;
 	}
 
-	res.render('auth/login.pug');
+	res.render('auth/login.ejs');
 
 });
 

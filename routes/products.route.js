@@ -25,7 +25,8 @@ route.get('/', (req, res) => {
 
   res.render('products/index.ejs', {
     foodList: db.get('foodList').value(),
-    cart: ''
+    cart: '',
+    user: '',
   });
 });
 
