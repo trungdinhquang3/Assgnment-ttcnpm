@@ -66,26 +66,17 @@
         <p class="pull-left">
             Chào mừng
             <b id="ucUpperHeader_b_FullName"></b>
-            đến với Shop Online,
-            <span id="ucUpperHeader_span_Account">
-                <a href="/auth/login">Đăng nhập</a>
-                hoặc
-                <a href="#">Đăng ký</a>
-            </span>
-            
+            đến với Shop Online
         </p>
 
         <ul class="pull-right inline">
+            <li class="divider-vertical"></li>
             <li>
-                <a href="#" class="invarseColor">Tài Khoản</a>
+                <a href="#" class="invarseColor"><%= user %></a>
             </li>
             <li class="divider-vertical"></li>
             <li>
-                <a href="/products/cart" class="invarseColor">Giỏ Hàng</a>
-            </li>
-            <li class="divider-vertical"></li>
-            <li>
-                <a href="#" class="invarseColor">Thanh Toán</a>
+                <a href="/auth/logout" class="invarseColor">Đăng xuất</a>
             </li>
         </ul>
     </div>
